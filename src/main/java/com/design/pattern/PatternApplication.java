@@ -6,6 +6,9 @@ import com.design.pattern.singleton.Student;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @SpringBootApplication
 public class PatternApplication {
 
@@ -46,6 +49,48 @@ public class PatternApplication {
 
 
 
+		//Streaming examples
+
+
+		//1. Sum of Odd Numbers
+
+		List<Integer> nums = List.of(1, 2, 3, 4, 5, 6, 7);
+
+		int result = nums.stream().filter(n->n%2!=0).reduce(0,(a,b)->a+b);
+
+		System.out.println("Sum of odd numbers: - "+result);
+
+
+
+		// 2. Total characters in all List
+		List<String> names = List.of("Prapti", "Boo", "Java");
+
+		int totalCharacters = names.stream().map(name->name.length())
+						.reduce(0,(a,b)->a+b);
+
+		System.out.println("total characters in list :- "+totalCharacters);
+
+
+		// 3. Total elements in all list
+		List<String> namesList = List.of("Prapti", "Boo", "Java","Hello","World");
+
+		Long totalElements = namesList.stream().count();
+
+		System.out.println("total elements in list :- "+totalElements);
+
+		// 4. Total distinct elements in all list
+		List<String> namesList1 = List.of("Prapti", "Boo", "Java","Hello","World","Boo","Java");
+
+		Long disitnctCount = namesList1.stream().distinct().count();
+
+		System.out.println("total disitnct elements in list :- "+disitnctCount);
+
+
+		//5. Join names with a comma
+		List<String> namesComma = List.of("Prapti", "Boo", "Java");
+		String resultComma = namesComma.stream().collect(Collectors.joining(", "));
+		System.out.println(resultComma);
 	}
+
 
 }
