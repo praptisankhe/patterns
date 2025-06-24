@@ -1,18 +1,21 @@
 package com.design.pattern;
 
+import com.design.pattern.singleton.Animal;
 import com.design.pattern.singleton.Employee;
 import com.design.pattern.singleton.Labor;
 import com.design.pattern.singleton.Student;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @SpringBootApplication
 public class PatternApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
 		SpringApplication.run(PatternApplication.class, args);
 
 		System.out.println("Singleton pattern ahead !!!");
@@ -48,6 +51,12 @@ public class PatternApplication {
 		System.out.println(l1.hashCode());
 
 
+
+		System.out.println("Reflection API - singleton class !!");
+		Animal animal= Animal.getAnimal();
+//		Constructor<Animal> constructor = Animal.class.getDeclaredConstructor();
+//		constructor.setAccessible(true);
+//		Animal newInstance = constructor.newInstance();
 
 		//Streaming examples
 
