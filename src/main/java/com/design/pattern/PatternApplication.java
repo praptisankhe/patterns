@@ -1,5 +1,9 @@
 package com.design.pattern;
 
+import com.design.pattern.factory.Car;
+import com.design.pattern.factory.CarFactory;
+import com.design.pattern.factory.CarType;
+import com.design.pattern.factory.InvalidCarTypeException;
 import com.design.pattern.singleton.Animal;
 import com.design.pattern.singleton.Employee;
 import com.design.pattern.singleton.Labor;
@@ -7,7 +11,6 @@ import com.design.pattern.singleton.Student;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -99,7 +102,36 @@ public class PatternApplication {
 		List<String> namesComma = List.of("Prapti", "Boo", "Java");
 		String resultComma = namesComma.stream().collect(Collectors.joining(", "));
 		System.out.println(resultComma);
+
+
+		//Factory Design pattern
+
+		System.out.println("Factory Design Pattern");
+
+		try
+		{
+			Car car1= CarFactory.getCar(CarType.LUXURY);
+			car1.drive();
+
+			Car car2= CarFactory.getCar(CarType.CHEAP);
+			car2.drive();
+
+//			Car car3= CarFactory.getCar("LuxuryScoda");
+//			car3.drive();
+		}
+		catch (InvalidCarTypeException invalidCarTypeException)
+		{
+			System.out.println(invalidCarTypeException.getMessage());
+		}
+
+//
+
+
+
 	}
+
+
+
 
 
 }
