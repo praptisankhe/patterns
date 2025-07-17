@@ -2,6 +2,7 @@ package com.design.pattern.prototype;
 
 public class DeciduousTree implements Tree{
 
+
     String leafTree;
     String autumColour;
     double height;
@@ -15,6 +16,12 @@ public class DeciduousTree implements Tree{
         return d;
     }
 
+    public void setAutumColour(String autumColour) {
+        this.autumColour = autumColour;
+    }
+    public void setLeafTree(String leafTree) {
+        this.leafTree = leafTree;
+    }
     @Override
     public double getHeight() {
         return height;

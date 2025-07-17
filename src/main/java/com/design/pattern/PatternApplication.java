@@ -5,6 +5,9 @@ import com.design.pattern.factory.Car;
 import com.design.pattern.factory.CarFactory;
 import com.design.pattern.factory.CarType;
 import com.design.pattern.factory.InvalidCarTypeException;
+import com.design.pattern.prototype.ConiferousTree;
+import com.design.pattern.prototype.DeciduousTree;
+import com.design.pattern.prototype.Tree;
 import com.design.pattern.singleton.Animal;
 import com.design.pattern.singleton.Employee;
 import com.design.pattern.singleton.Labor;
@@ -149,6 +152,26 @@ public class PatternApplication {
 
 
 
+
+		//Prototype desgin pattern
+
+		System.out.println("Prototype Design Pattern !!!!");
+		ConiferousTree pine = new ConiferousTree();
+		pine.setHeight(10.5);
+		pine.setNeedleLength(5);
+		pine.setProducesCones(true);
+		pine.display();
+
+		Tree cloneConferious = pine.clone();
+		cloneConferious.display();
+
+		DeciduousTree deciduousTree= new DeciduousTree();
+		deciduousTree.setLeafTree("Maple");
+		deciduousTree.setHeight(8.9);
+		deciduousTree.setAutumColour("Red-Orange");
+		deciduousTree.display();
+		Tree mapleTree = deciduousTree.clone();
+		mapleTree.display();
 	}
 
 

@@ -13,6 +13,14 @@ public class ConiferousTree implements Tree{
         return coniferousTree;
     }
 
+    public void setNeedleLength(double needleLength) {
+        this.needleLength = needleLength;
+    }
+
+    public void setProducesCones(boolean producesCones) {
+        this.producesCones = producesCones;
+    }
+
     @Override
     public double getHeight() {
         return height;
