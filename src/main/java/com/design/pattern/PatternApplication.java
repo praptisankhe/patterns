@@ -1,6 +1,7 @@
 package com.design.pattern;
 
 import com.design.pattern.abstactFactory.*;
+import com.design.pattern.builder.Pizza;
 import com.design.pattern.factory.Car;
 import com.design.pattern.factory.CarFactory;
 import com.design.pattern.factory.CarType;
@@ -172,6 +173,31 @@ public class PatternApplication {
 		deciduousTree.display();
 		Tree mapleTree = deciduousTree.clone();
 		mapleTree.display();
+
+
+
+
+		System.out.println("Builder Design Pattern !!!!");
+		Pizza mypizza = new Pizza.Builder("Medium")
+				.addCheese(true)
+				.addPeproni(false)
+				.addMushroom(true)
+				.build();
+
+		System.out.println("Here is your pizzaaa !!!" +mypizza);
+
+
+		System.out.println(mypizza);
+
+		Pizza mypizza2 = new Pizza.Builder("Large")
+				.addCheese(true)
+				.build();
+		System.out.println("Here is your pizzaaa !!!" +mypizza2);
+
+
+		System.out.println(mypizza2);
+
+
 	}
 
 
