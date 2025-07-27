@@ -13,6 +13,10 @@ import com.design.pattern.singleton.Animal;
 import com.design.pattern.singleton.Employee;
 import com.design.pattern.singleton.Labor;
 import com.design.pattern.singleton.Student;
+import com.design.pattern.structural.adapter.AudioPlayer;
+import com.design.pattern.structural.adapter.example2.ChargerAdapter;
+import com.design.pattern.structural.adapter.example2.Laptop;
+import com.design.pattern.structural.adapter.example2.UsbCCharger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -197,6 +201,21 @@ public class PatternApplication {
 
 		System.out.println(mypizza2);
 
+
+
+		//Adapter pattern
+
+		System.out.println("Adapter pattern ");
+		AudioPlayer audioPlayer= new AudioPlayer();
+		audioPlayer.play("mp3", "summer_vibes.mp3");
+		audioPlayer.play("mp4", "vacation_video.mp4");
+		audioPlayer.play("vlc", "documentary.vlc");
+
+
+		UsbCCharger usbCCharger=new UsbCCharger();
+		ChargerAdapter chargerAdapter= new ChargerAdapter(usbCCharger);
+		Laptop laptop= new Laptop();
+		laptop.chargeLaptop(chargerAdapter);
 
 	}
 
