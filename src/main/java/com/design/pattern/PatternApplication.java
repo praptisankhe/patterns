@@ -13,10 +13,7 @@ import com.design.pattern.singleton.Animal;
 import com.design.pattern.singleton.Employee;
 import com.design.pattern.singleton.Labor;
 import com.design.pattern.singleton.Student;
-import com.design.pattern.strcutural.bridge.Dancable;
-import com.design.pattern.strcutural.bridge.DanceRemote;
-import com.design.pattern.strcutural.bridge.DancingDog;
-import com.design.pattern.strcutural.bridge.DancingRobot;
+import com.design.pattern.strcutural.bridge.*;
 import com.design.pattern.structural.adapter.AudioPlayer;
 import com.design.pattern.structural.adapter.example2.ChargerAdapter;
 import com.design.pattern.structural.adapter.example2.Laptop;
@@ -232,6 +229,10 @@ public class PatternApplication {
 
 		DanceRemote danceRemoteDog= new DanceRemote(dancingDog);
 		danceRemoteDog.pressDanceButton();
+
+		FlipRobot flipRobot=new FlipRobot();
+		FlipRemote flipRemote= new FlipRemote(flipRobot);
+		flipRemote.flip();
 
 	}
 
