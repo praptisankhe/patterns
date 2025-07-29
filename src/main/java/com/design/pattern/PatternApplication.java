@@ -13,6 +13,10 @@ import com.design.pattern.singleton.Animal;
 import com.design.pattern.singleton.Employee;
 import com.design.pattern.singleton.Labor;
 import com.design.pattern.singleton.Student;
+import com.design.pattern.strcutural.bridge.Dancable;
+import com.design.pattern.strcutural.bridge.DanceRemote;
+import com.design.pattern.strcutural.bridge.DancingDog;
+import com.design.pattern.strcutural.bridge.DancingRobot;
 import com.design.pattern.structural.adapter.AudioPlayer;
 import com.design.pattern.structural.adapter.example2.ChargerAdapter;
 import com.design.pattern.structural.adapter.example2.Laptop;
@@ -216,6 +220,18 @@ public class PatternApplication {
 		ChargerAdapter chargerAdapter= new ChargerAdapter(usbCCharger);
 		Laptop laptop= new Laptop();
 		laptop.chargeLaptop(chargerAdapter);
+
+		//Bridge pattern
+
+		System.out.println("Bridge pattern ");
+		DancingRobot dancingRobot= new DancingRobot();
+		DanceRemote danceRemote= new DanceRemote(dancingRobot);
+		danceRemote.pressDanceButton();
+
+		DancingDog dancingDog= new DancingDog();
+
+		DanceRemote danceRemoteDog= new DanceRemote(dancingDog);
+		danceRemoteDog.pressDanceButton();
 
 	}
 
