@@ -18,6 +18,10 @@ import com.design.pattern.structural.adapter.AudioPlayer;
 import com.design.pattern.structural.adapter.example2.ChargerAdapter;
 import com.design.pattern.structural.adapter.example2.Laptop;
 import com.design.pattern.structural.adapter.example2.UsbCCharger;
+import com.design.pattern.structural.decorator.BasePizza;
+import com.design.pattern.structural.decorator.ChickenSupreme;
+import com.design.pattern.structural.decorator.ExtraCheese;
+import com.design.pattern.structural.decorator.ExtraChicken;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -233,6 +237,14 @@ public class PatternApplication {
 		FlipRobot flipRobot=new FlipRobot();
 		FlipRemote flipRemote= new FlipRemote(flipRobot);
 		flipRemote.flip();
+
+		//Decorator Design Pattern
+		System.out.println("Decorator design pattern");
+		BasePizza pizza = new ExtraChicken(new ExtraCheese(new ChickenSupreme()));
+		System.out.println("Macy , here is your bill to pay : "+ pizza.cost());
+
+
+
 
 	}
 
