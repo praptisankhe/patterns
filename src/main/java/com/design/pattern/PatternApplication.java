@@ -22,6 +22,9 @@ import com.design.pattern.structural.decorator.BasePizza;
 import com.design.pattern.structural.decorator.ChickenSupreme;
 import com.design.pattern.structural.decorator.ExtraCheese;
 import com.design.pattern.structural.decorator.ExtraChicken;
+import com.design.pattern.structural.decorator.example2.ChocolateSyrup;
+import com.design.pattern.structural.decorator.example2.IceCream;
+import com.design.pattern.structural.decorator.example2.VanillaCone;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -244,7 +247,9 @@ public class PatternApplication {
 		System.out.println("Macy , here is your bill to pay : "+ pizza.cost());
 
 
-
+		IceCream iceCream = new ChocolateSyrup(new VanillaCone());
+		System.out.println(iceCream.getDescription());
+		System.out.println(iceCream.getCost());
 
 	}
 
