@@ -25,6 +25,10 @@ import com.design.pattern.structural.decorator.ExtraChicken;
 import com.design.pattern.structural.decorator.example2.ChocolateSyrup;
 import com.design.pattern.structural.decorator.example2.IceCream;
 import com.design.pattern.structural.decorator.example2.VanillaCone;
+import com.design.pattern.structural.facade.EmailService;
+import com.design.pattern.structural.facade.HotelFacade;
+import com.design.pattern.structural.facade.PaymentService;
+import com.design.pattern.structural.facade.RoomService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -250,6 +254,17 @@ public class PatternApplication {
 		IceCream iceCream = new ChocolateSyrup(new VanillaCone());
 		System.out.println(iceCream.getDescription());
 		System.out.println(iceCream.getCost());
+
+
+		//Facade design pattern
+		System.out.println("Facade Design Pattern.......");
+		EmailService emailService = new EmailService();
+		RoomService roomService = new RoomService();
+		PaymentService paymentService = new PaymentService();
+
+		HotelFacade hotelFacade = new HotelFacade(emailService,paymentService,roomService);
+		hotelFacade.bookRoom();
+
 
 	}
 
