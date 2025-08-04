@@ -29,6 +29,7 @@ import com.design.pattern.structural.facade.EmailService;
 import com.design.pattern.structural.facade.HotelFacade;
 import com.design.pattern.structural.facade.PaymentService;
 import com.design.pattern.structural.facade.RoomService;
+import com.design.pattern.structural.proxy.ProxyInternetAccess;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -266,6 +267,14 @@ public class PatternApplication {
 		hotelFacade.bookRoom();
 
 
+		//Proxy Desing Pattern
+		System.out.println("Proxy Design Pattern .....");
+		ProxyInternetAccess proxyInternetAccess= new ProxyInternetAccess("ADMIN");
+		proxyInternetAccess.grantAccess();
+		ProxyInternetAccess proxyInternetAccess1= new ProxyInternetAccess("Manager");
+		proxyInternetAccess1.grantAccess();
+		ProxyInternetAccess proxyInternetAccess2= new ProxyInternetAccess("Devloper");
+		proxyInternetAccess2.grantAccess();
 	}
 
 
